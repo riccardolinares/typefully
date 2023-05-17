@@ -2736,7 +2736,7 @@ exports.run = void 0;
 const core = __importStar(__nccwpck_require__(186));
 async function run() {
     try {
-        const apiKey = core.getInput("api-key");
+        const apiKey = core.getInput("typefully-api-key");
         const content = core.getInput("content");
         const threadify = core.getInput("threadify");
         const share = core.getInput("share");

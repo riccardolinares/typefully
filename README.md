@@ -7,7 +7,7 @@ In your Github Actions workflow, add the following YAML code to utilize the acti
 - name: Typefully
   uses: riccardolinares/typefully@v0.0.1
   with:
-    api-key: ${{ secrets.API_KEY }}
+    typefully-api-key: ${{ secrets.TYPEFULLY_API_KEY }}
     content: 'Hello, world!'
     threadify: true
     share: true
@@ -16,7 +16,7 @@ In your Github Actions workflow, add the following YAML code to utilize the acti
 
 ## Inputs
 The action requires the following inputs:
-- `api-key`: Required. The API key for your Typefully account.
+- `typefully-api-key`: Required. The API key for your Typefully account.
 - `content`: Required. The content you want to post to your social media accounts.
 - `threadify`: Content will be automatically split into multiple tweets. Default is false.
 - `share`: If true, returned payload will include a share_url. Default is true.

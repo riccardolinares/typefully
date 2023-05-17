@@ -51,5 +51,5 @@ jobs:
       - name: Typefully
         uses: riccardolinares/typefully@v0.0.1
         with:
-          api-key: ${{ secrets.TYPEFULLY_API_KEY }}
+          typefully-api-key: ${{ secrets.TYPEFULLY_API_KEY }}
           content: ${{ steps.openai.outputs.text }}

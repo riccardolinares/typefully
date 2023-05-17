@@ -5,7 +5,7 @@ branding:
   icon: calendar
   color: blue
 inputs:
-  api-key:
+  typefully-api-key:
     description: 'Your Typefully API key'
     required: true
   content:
