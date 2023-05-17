@@ -2741,7 +2741,6 @@ async function run() {
         const threadify = core.getInput("threadify");
         const share = core.getInput("share");
         const scheduleDate = core.getInput("schedule-date");
-        // Make an API request to Typefully Authorizing API requests. Include this header in all the requests you make: X-API-KEY Bearer TYPEFULLY_API_KEY
         const response = await fetch("https://api.typefully.com/v1/drafts/", {
             method: "POST",
             headers: {
