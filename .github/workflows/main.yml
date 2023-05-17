@@ -31,4 +31,3 @@ jobs:
         with:
           typefully-api-key: ${{ secrets.TYPEFULLY_API_KEY }}
           content: ${{ steps.openai.outputs.text }}
-          schedule-date: "" 
