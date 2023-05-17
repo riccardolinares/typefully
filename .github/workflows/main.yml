@@ -1,4 +1,4 @@
-name: Tweet with OpenAI on Push
+name: Typefully with OpenAI on Push
 
 on:
   push:
