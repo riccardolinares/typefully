@@ -1,0 +1,28 @@
+name: "Typefully"
+description: "A GitHub Action to schedule a tweet with Typefully API."
+author: riccardolinares
+branding:
+  icon: calendar
+  color: blue
+inputs:
+  api-key:
+    description: 'Your Typefully API key'
+    required: true
+  content:
+    description: 'The content of the tweet'
+    require: true
+  threadify:
+    description: 'Content will be automatically split into multiple tweets'
+    required: false
+    default: false
+  share:
+    description: 'If true, returned payload will include a share_url'
+    required: false
+    default: true
+  schedule-date:
+    description: 'The date to schedule the tweet. Can either be an ISO formatted date (e.g.:2022-06-13T11:13:31.662Z) or next-free-slot'
+    required: false
+    default: 'next-free-slot'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
