@@ -1,5 +1,5 @@
 import * as core from "@actions/core";
-import fetch from "node-fetch";
+import axios from "axios";
 
 export async function run(): Promise<void> {
   try {
@@ -9,19 +9,25 @@ export async function run(): Promise<void> {
     const share = core.getInput("share");
     const scheduleDate = core.getInput("schedule-date");
 
-    const response = await fetch("https://api.typefully.com/v1/drafts/", {
-      method: "POST",
+    const config = {
       headers: {
         "Content-Type": "application/json",
         "X-API-KEY": apiKey,
       },
-      body: JSON.stringify({
-        content: content,
-        threadify: threadify,
-        share: share,
-        schedule_date: scheduleDate,
-      }),
-    });
+    };
+
+    const data = {
+      content: content,
+      threadify: threadify,
+      share: share,
+      schedule_date: scheduleDate,
+    };
+
+    const response = await axios.post(
+      "https://api.typefully.com/v1/drafts/",
+      data,
+      config
+    );
 
     if (response.status !== 200) {
       throw new Error(
@@ -29,7 +35,7 @@ export async function run(): Promise<void> {
       );
     }
 
-    core.setOutput("Response", response.json());
+    core.setOutput("Response", response.data);
   } catch (error) {
     if (error instanceof Error) {
       core.setFailed(error.message);
