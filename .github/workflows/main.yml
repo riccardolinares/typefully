@@ -17,13 +17,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2.5.2
         with:
-          node-version: 18
+          node-version: 16
 
       - name: OpenAI
         uses: riccardolinares/openai-commit@v0.0.1
         with:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          openai-prompt: "Write a tweet about this git commit: \n${{ github.event.head_commit.message }}"
+          openai-prompt: "Write a description about this git commit: \n${{ github.event.head_commit.message }}"
         id: openai
 
       - name: Typefully
@@ -31,3 +31,4 @@ jobs:
         with:
           typefully-api-key: ${{ secrets.TYPEFULLY_API_KEY }}
           content: ${{ steps.openai.outputs.text }}
+          schedule-date: "" 

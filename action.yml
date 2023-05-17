@@ -22,6 +22,7 @@ inputs:
   schedule-date:
     description: 'The date to schedule the tweet. Can either be an ISO formatted date (e.g.:2022-06-13T11:13:31.662Z) or next-free-slot'
     required: false
+    default: "next-free-slot"
 runs:
   using: 'node16'
   main: 'dist/index.js'
