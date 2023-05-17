@@ -1,4 +1,4 @@
-name: "Typefully"
+name: "Typefully Action"
 description: "A GitHub Action to schedule a tweet with Typefully API."
 author: riccardolinares
 branding:

@@ -7,7 +7,7 @@ In your Github Actions workflow, add the following YAML code to utilize the acti
 - name: Typefully
   uses: riccardolinares/typefully@v0.0.1
   with:
-    api-key: ${{ secrets.TYPEFULLY_API_KEY }}
+    api-key: ${{ secrets.API_KEY }}
     content: 'Hello, world!'
     threadify: true
     share: true
