@@ -33,7 +33,7 @@ ${{ steps.typefully.outputs.text}}
 2. Go to the "Actions" tab and click on "Set up a workflow yourself".
 3. Copy and paste the code from the example folder into the workflow file.
 4. Go to the "Settings" tab and click on "Secrets".
-5. Add a new secret named `API_KEY` with your OpenAI API key.
+5. Add a new secret named `TYPEFULLY_API_KEY` with your OpenAI API key.
 6. Commit the changes to your repository.
 
 ## Limitations
